@@ -1,11 +1,13 @@
 resource "jenkins_folder" "folders" {
-  name = "infra"
+  count = length(var.folders)
+  name = element(var.folders, count.index)
 }
 
 resource "jenkins_job" "example" {
-  name     = "roboshop"
+  count = length(var.jobs)
+  name     = lookup(element(var.jobs, count.index), "name", null)
   folder   = jenkins_folder.folders.id
   template = templatefile("${path.module}/singbr-pipeline.xml", {
-    description = ""
+    repo_url = lookup(element(var.jobs, count.index), "repo_url", null)
   })
 }
