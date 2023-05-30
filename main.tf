@@ -10,4 +10,8 @@ resource "jenkins_job" "example" {
   template = templatefile("${path.module}/singbr-pipeline.xml", {
     repo_url = lookup(element(var.jobs, count.index), "repo_url", null)
   })
+
+  lifecycle {
+    ignore_changes = [template]
+  }
 }
