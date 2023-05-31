@@ -16,3 +16,14 @@ resource "jenkins_job" "example" {
      ignore_changes = [template]
   }
 }
+
+data "aws_instance" "jenkins"{
+   id = "i-0c0c01e1b15cff72f"
+}
+resource "aws_route53_record" "jenkins" {
+  zone_id = "Z10169603GCPS6PZET2FX"
+  name    = "jenkins.devopsb71.tech"
+  type    = "A"
+  ttl     = 30
+  records = [data.aws_instance.jenkins.public_ip]
+}
