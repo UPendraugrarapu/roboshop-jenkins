@@ -13,11 +13,6 @@ resource "jenkins_job" "example" {
   })
 
   lifecycle {
-    //ignore_changes = var.force ? [template] : []
-    ignore_changes = var.ignore_changes_list
+     ignore_changes = [template]
   }
-}
-variable "ignore_changes_list" {
-  type = list(string)
-  default = ["template"]
 }
