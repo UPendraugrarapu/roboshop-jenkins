@@ -4,7 +4,6 @@ variable "folders" {
 
 variable "m-jobs" {
   default = [
-    {  name = "roboshop", folder = "infra", repo_url = "https://github.com/upendraugrarapu/roboshop-infra" },
     {  name = "frontend", folder = "CI-Pipeline", repo_url = "https://github.com/upendraugrarapu/frontend" },
     {  name = "cart", folder = "CI-Pipeline", repo_url = "https://github.com/upendraugrarapu/cart" },
     {  name = "catalogue", folder = "CI-Pipeline", repo_url = "https://github.com/upendraugrarapu/catalogue" },
@@ -14,7 +13,9 @@ variable "m-jobs" {
   ]
 }
 variable "s-jobs"{
-  default =[]
+  default =[
+    {  name = "roboshop", folder = "infra", repo_url = "https://github.com/upendraugrarapu/roboshop-infra" }
+  ]
 }
 variable "force" {
   default = false
