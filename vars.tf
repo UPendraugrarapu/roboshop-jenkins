@@ -13,7 +13,7 @@ variable "m-jobs" {
     {  name = "payment", folder = "CI-Pipeline", repo_url = "https://github.com/upendraugrarapu/payment" }
   ]
 }
-variable "s-job"{
+variable "s-jobs"{
   default =[]
 }
 variable "force" {
