@@ -9,7 +9,8 @@ variable "m-jobs" {
     {  name = "catalogue", folder = "CI-Pipeline", repo_url = "https://github.com/upendraugrarapu/catalogue" },
     {  name = "user", folder = "CI-Pipeline", repo_url = "https://github.com/upendraugrarapu/user" },
     {  name = "shipping", folder = "CI-Pipeline", repo_url = "https://github.com/upendraugrarapu/shipping" },
-    {  name = "payment", folder = "CI-Pipeline", repo_url = "https://github.com/upendraugrarapu/payment" }
+    {  name = "payment", folder = "CI-Pipeline", repo_url = "https://github.com/upendraugrarapu/payment" },
+    {  name = "aws-ssm-param-store", folder = "CI-Pipeline", repo_url = "https://github.com/upendraugrarapu/aws-ssm-param-store" }
   ]
 }
 variable "s-jobs"{
